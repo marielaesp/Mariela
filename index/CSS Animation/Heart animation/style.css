@@ -1,0 +1,63 @@
+@keyframes like {
+    0% {stroke-dashoffset: 57;
+        fill:grey;
+    }
+    70% {stroke-dashoffset: 0;
+        fill:grey;
+    }
+    100% {stroke-dashoffset: 0;
+        fill: hotpink;
+    }
+}
+
+    @keyframes unlike {
+        0% {stroke-dashoffset: 0;
+            fill:magenta;
+        }
+        70% {stroke-dashoffset: 0;
+            fill:grey;
+        }
+        100% {stroke-dashoffset: 57;
+            fill: grey;
+        }
+
+
+}
+
+@keyframes beat {
+    0% {transform: scale(1,1);}
+    50% {transform: scale(0.8,0.8);}
+    100% {transform: scale(1,1);}
+}
+
+
+body{
+    text-align: center;
+    margin-top: 0px;
+}
+
+#container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#heart{
+    width: 150px;
+    fill: grey;
+    stroke: hotpink;
+    stroke-width: 2px;
+    position: relative;
+    stroke-dasharray: 57;
+    stroke-dashoffset: 57;
+    
+}
+
+#heart.like{
+    animation: like 2s ease-in forwards, beat 0.8s linear 2s 2 forwards;
+}
+
+#heart.unlike{
+    animation: unlike 2s ease-out forwards, beat 0.8s linear 2s 2 forwards;
+}

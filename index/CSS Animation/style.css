@@ -1,0 +1,59 @@
+@keyframes relleno {
+    0% {fill: blue; left:0px; top:0px;}
+    20% {fill: green; left:-25px; top:-25px;}
+    50% {fill: yellow; left: -50px; top: -50px;}
+    75% {fill: orange; left: -75px; top: -25px;}
+    100% {fill: red; left: -100px; top: 0px;}
+   
+  }
+
+  @keyframes rotacion {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+  }
+
+  @keyframes upndown{
+    from {translate: (0,0);}
+    to {translate: (0, 50);}
+  }
+  
+body{
+    text-align: center;
+    margin-top: 0px;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#star{
+    width: 100px;
+    fill:midnightblue;
+    animation-name: relleno;
+    position: relative;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#brick{
+    width:100px;
+    animation: upndown 5s linear 2s infinite alternate;
+
+}
+
+#brick:hover{
+    width: 300px;
+    transition: width 2s;
+    transition-timing-function: ease-out;
+}
+
+#huevo{
+    width:100px;
+    animation: rotacion 5s linear 2s infinite alternate;
+}
